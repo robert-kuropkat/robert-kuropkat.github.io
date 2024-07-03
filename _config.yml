@@ -2,5 +2,8 @@
 remote_theme: pages-themes/time-machine@v0.2.0
 plugins:
 - jekyll-remote-theme
-title: Robert Kuropkat a Doer of Stuff
-description: Bookmark this to keep an eye on my project updates!
+title: Robert Kuropkat
+name: Robert Kuropkat
+description: a Thinker of things... a Doer of Stuff...
+repository: "robert-kuropkat/robert-kuropkat.github.io"
+timezone: America/New_York
