@@ -7,7 +7,7 @@ efforts.
 
 ## Repositories
 
-[My GitHub Profile Page](https://github.com/robert-kuropkat/)\
+[My GitHub Profile Page](https://github.com/robert-kuropkat/)
 
 ### e4c Training
 
