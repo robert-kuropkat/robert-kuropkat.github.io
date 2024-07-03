@@ -7,25 +7,25 @@ efforts.
 
 ## Repositories
 
-[My GitHub Profile Page](https://github.com/robert-kuropkat/)
+[My GitHub Profile Page](https://github.com/robert-kuropkat/)\
 [e4c Training](https://robert-kuropkat.github.io/e4cTraining/)
 
 ### Unity Self Training
 
-[GameDevHQ 2D Game Development Training](https://github.com/robert-kuropkat/GDHQ-StarShooterPro)
-[GameDevHQ Unity C# Survival Guide](https://github.com/robert-kuropkat/GDHQ-CSharpSurvivalGuide)
+[GameDevHQ 2D Game Development Training](https://github.com/robert-kuropkat/GDHQ-StarShooterPro)\
+[GameDevHQ Unity C# Survival Guide](https://github.com/robert-kuropkat/GDHQ-CSharpSurvivalGuide)\
 [Learn Unity Pathways](https://github.com/robert-kuropkat/UnityPathways)
 
 ## Blogverse
 
-[Musings and Meanderings](http://robert.kuropkat.info/)
-[Doers of Stuff](https://doersofstuff.org/)
+[Musings and Meanderings](http://robert.kuropkat.info/)\
+[Doers of Stuff](https://doersofstuff.org/)\
 [Homeschooling](https://homeschool.kuropkat.info/)
 
 ## Professional
-[My Professional Website](https://robert.kuropkat.com/)
+[My Professional Website](https://robert.kuropkat.com/)\
 [My LinkedIn Profile](https://www.linkedin.com/in/robertkuropkat/)
 
 ## Social
-[my Facebook Programmer Page](https://www.facebook.com/robert.kuropkat.programmer/)
+[my Facebook Programmer Page](https://www.facebook.com/robert.kuropkat.programmer/)\
 [X _(formally Twitter)_](https://x.com/robert_kuropkat)
