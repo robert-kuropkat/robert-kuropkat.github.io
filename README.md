@@ -9,10 +9,6 @@ efforts.
 
 [My GitHub Profile Page](https://github.com/robert-kuropkat/)
 
-### e4c Training
-
-[e4c Training](https://robert-kuropkat.github.io/e4cTraining/)
-
 ### Unity Self Training
 
 [GameDevHQ 2D Game Development Training](https://github.com/robert-kuropkat/GDHQ-StarShooterPro)\
