@@ -24,6 +24,18 @@
   color: white;
 }
 
+.App-body {
+  background-color: #282c34;
+  text-align: justify;
+  margin: 2em 2em 2em 2em;
+}
+
+.App-body-left {
+  background-color: #282c34;
+  text-align: left;
+  margin: 2em 2em 2em 2em;
+}
+
 .App-link {
   color: #61dafb;
 }
