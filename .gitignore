@@ -25,4 +25,5 @@
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
-/.vs/robert-kuropkat.github.io
+#/.vs/robert-kuropkat.github.io
+.vs
