@@ -35,6 +35,10 @@ jobs:
     # Install dotnet wasm buildtools workload
     - name: Install .NET WASM Build Tools
       run : dotnet workload install wasm-tools
+    # Disable GitHub default jekyll behavior
+    - name: Add .nojekyll file
+      run: touch dist/Web/wwwroot/.nojekyll
+    
 
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
