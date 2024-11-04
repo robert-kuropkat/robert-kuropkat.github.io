@@ -46,6 +46,10 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.6.8
       with:
-        TOKEN : ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-blazor
-        FOLDER: blazor-site/bin/Release/wwwroot
+        token : ${{ secrets.GITHUB_TOKEN }}
+        branch: gh-blazor
+        folder: blazor-site/bin/Release/wwwroot
+    # Disable GitHub default jekyll behavior
+    - name: Add .nojekyll file
+      run: touch blazor-site/bin/Release/wwwroot/.nojekyll
+        
