@@ -32,17 +32,20 @@ jobs:
         dotnet-version: 8.0.x
         #cache         : true
         #cache-dependency-path: ./packages.lock.json
-    # Install dotnet wasm buildtools workload
-    - name: Install .NET WASM Build Tools
-      run : dotnet workload install wasm-tools
-    # Disable GitHub default jekyll behavior
-    - name: Add .nojekyll file
-      run: touch .nojekyll
+
+        # Install dotnet wasm buildtools workload
+#    - name: Install .NET WASM Build Tools
+#      run : dotnet workload install wasm-tools
     
 
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
       run : dotnet publish ./blazor-site/blazor-site.csproj -c Release -o release --nologo
+
+
+    # Disable GitHub default jekyll behavior
+    - name: Add .nojekyll file
+      run: touch .nojekyll
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.6.8
       with:
