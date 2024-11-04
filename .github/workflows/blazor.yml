@@ -37,7 +37,7 @@ jobs:
       run : dotnet workload install wasm-tools
     # Disable GitHub default jekyll behavior
     - name: Add .nojekyll file
-      run: touch dist/Web/wwwroot/.nojekyll
+      run: touch .nojekyll
     
 
     # publishes Blazor project to the release-folder
