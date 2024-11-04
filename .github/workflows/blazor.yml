@@ -51,5 +51,5 @@ jobs:
         folder: blazor-site/bin/Release/wwwroot
     # Disable GitHub default jekyll behavior
     - name: Add .nojekyll file
-      run: touch blazor-site/bin/Release/wwwroot/.nojekyll
+      run: .nojekyll
         
