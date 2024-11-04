@@ -45,14 +45,11 @@ jobs:
 
     # Disable GitHub default jekyll behavior
     - name: Add .nojekyll file
-      run: touch .nojekyll
+      run: touch blazor-site/bin/Release/wwwroot/.nojekyll
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.6.8
       with:
         token : ${{ secrets.GITHUB_TOKEN }}
         branch: gh-blazor
         folder: blazor-site/bin/Release/wwwroot
-    # Disable GitHub default jekyll behavior
-    - name: Add .nojekyll file
-      run: touch .nojekyll
         
