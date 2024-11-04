@@ -44,4 +44,4 @@ jobs:
       with:
         TOKEN : ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-blazor
-        FOLDER: blazor-site/bin/release
+        FOLDER: blazor-site/bin/Release
