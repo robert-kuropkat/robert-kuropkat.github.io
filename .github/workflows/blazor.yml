@@ -31,8 +31,8 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-        cache         : true
-        cache-dependency-path: ./packages.lock.json
+        #cache         : true
+        #cache-dependency-path: ./packages.lock.json
 
         # Install dotnet wasm buildtools workload
 #    - name: Install .NET WASM Build Tools
