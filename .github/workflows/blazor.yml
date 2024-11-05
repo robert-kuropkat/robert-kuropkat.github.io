@@ -55,5 +55,6 @@ jobs:
       with:
         token : ${{ secrets.GITHUB_TOKEN }}
         branch: gh-blazor
-        folder: blazor-site/bin/Release/wwwroot
+        #folder: blazor-site/bin/Release/wwwroot
+        folder: release/wwwroot
         
