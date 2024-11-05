@@ -1,60 +1,97 @@
+#
+#  Checkout, Build and Publish a Blazor Web site using GitHub Actions
+#  then check the published website int oa custom branch (gh-blazor)
+#  Once completed, GitHub will trigger a rebuild of the deployed 
+#  website to https://robert-kuropkat.github.io/
+#
 name: Deploy Blazor Site to GitHub Pages
-# Run workflow on every push to the master branch
+
+#
+# Run workflow on every push to the main branch
+#
 on:
   push:
     branches: [ main ]
-  # Allows you to run this workflow manually from the Actions tab
+
+  #
+  # Allows manual run of workflow from GitHub Actions dashboard
+  #
   workflow_dispatch:
 
+#
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+#
 permissions:
   contents: write
   pages   : write
   id-token: write
   
+#
+# If I have this correct, it means multiple quick commits will NOT all
+# run concurrently.  The currently running job will be allowed to complete
+# However, any commit thereafter will be cancelled except the latest.  In 
+# other words at any time there can only be two jobs.  One running and one
+# pending.
+#
 concurrency:
   group   : "pages"
   cancel-in-progress: false
 
 jobs:
   deploy-to-github-pages:
-    # use ubuntu-latest image to run steps on
+    #
+    # use ubuntu-latest image to run steps on, even though this is a
+    # Windows .Net application.  It works, and running on Linux is
+    # cheaper and has more free run time.
+    #
     runs-on: ubuntu-latest
     env:
       NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
       GH_TOKEN      : ${{ secrets.GITHUB_TOKEN }}
+
+    # 
+    # Individual Steps of Job
+    #
     steps:
+    #
     # uses GitHub's checkout action to checkout code form the master branch
-    - uses: actions/checkout@v4
-    # sets up .NET Core SDK 3.1
+    #
+    - name: Checkout main branch of code.
+      uses: actions/checkout@v4
+    #
+    # sets up .NET Core SDK 8.0.x
+    #
     - name: Setup .NET Core SDK
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-        #cache         : true
+        cache         : true
         #cache-dependency-path: ./packages.lock.json
 
         # Install dotnet wasm buildtools workload
 #    - name: Install .NET WASM Build Tools
 #      run : dotnet workload install wasm-tools
     
-
+    #
     # publishes Blazor project to the release-folder
+    #
     - name: Publish .NET Core Project
       run : dotnet publish ./blazor-site/blazor-site.csproj -c Release -o release --nologo
 
-
-    # Disable GitHub default jekyll behavior
+    #
+    # Disable GitHub default Jekyll Templates
+    #
     - name: Add .nojekyll file
       run : touch release/wwwroot/.nojekyll
-      #run : |
-      #      mkdir -p blazor-site/bin/Release/wwwroot/
-      #      touch blazor-site/bin/Release/wwwroot/.nojekyll
+    
+    #
+    # Use Community built custom Action to create/update branch from
+    # which our GitHub pages will be built
+    #
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.6.8
       with:
         token : ${{ secrets.GITHUB_TOKEN }}
         branch: gh-blazor
-        #folder: blazor-site/bin/Release/wwwroot
         folder: release/wwwroot
         
