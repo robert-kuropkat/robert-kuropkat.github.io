@@ -46,9 +46,10 @@ jobs:
 
     # Disable GitHub default jekyll behavior
     - name: Add .nojekyll file
-      run : |
-            mkdir -p blazor-site/bin/Release/wwwroot/
-            touch blazor-site/bin/Release/wwwroot/.nojekyll
+      run : touch release/wwwroot/.nojekyll
+      #run : |
+      #      mkdir -p blazor-site/bin/Release/wwwroot/
+      #      touch blazor-site/bin/Release/wwwroot/.nojekyll
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4.6.8
       with:
