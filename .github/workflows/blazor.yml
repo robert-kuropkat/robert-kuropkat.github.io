@@ -7,15 +7,13 @@
 name: Deploy Blazor Site to GitHub Pages
 
 #
-# Run workflow on every push to the main branch
+# Run workflow on every:
+#   push to the main branch
+#   on manual invocation
 #
 on:
   push:
     branches: [ main ]
-
-  #
-  # Allows manual run of workflow from GitHub Actions dashboard
-  #
   workflow_dispatch:
 
 #
@@ -31,7 +29,8 @@ permissions:
 # run concurrently.  The currently running job will be allowed to complete
 # However, any commit thereafter will be cancelled except the latest.  In 
 # other words at any time there can only be two jobs.  One running and one
-# pending.
+# pending.  Default behavor is to cancel the current job if a new commit
+# comes in while it is still running.
 #
 concurrency:
   group   : "pages"
@@ -65,8 +64,6 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-        cache         : true
-        #cache-dependency-path: ./packages.lock.json
 
         # Install dotnet wasm buildtools workload
 #    - name: Install .NET WASM Build Tools
