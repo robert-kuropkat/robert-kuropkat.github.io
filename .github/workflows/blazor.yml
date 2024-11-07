@@ -80,6 +80,12 @@ jobs:
     #
     - name: Add .nojekyll file
       run : touch release/wwwroot/.nojekyll
+
+    #
+    # Reroute 404 to main page
+    #
+    - name: Reroute 404
+      run: cp release/wwwroot/index.html release/wwwroot/404.html
     
     #
     # Use Community built custom Action to create/update branch from
