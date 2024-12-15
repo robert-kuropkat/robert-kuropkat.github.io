@@ -6,6 +6,7 @@ namespace blazor_site.Pages
 
         private void IncrementCount()
         {
+            logger.LogInformation("Button Clicked!");
             currentCount++;
         }
     }
